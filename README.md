@@ -47,6 +47,17 @@ python -m pip install -e '.[spark]'
 
 The Spark notebook is designed for a Databricks workspace and ADLS Gen2 configuration; installing these libraries locally does not provision a Spark cluster or Azure resources.
 
+## Screenshots
+
+Real output from a local run (`--source sample`).
+
+![Pipeline run](docs/images/pipeline_run.png)
+![Bronze, Silver and Gold tables](docs/images/medallion_layers.png)
+![Quality gate rejecting bad rows](docs/images/quality_gate.png)
+
+Screenshots are generated from live pipeline output with `python scripts/capture_screenshots.py`
+(dev-only; needs a Chromium-based browser such as Chrome, Brave or Edge, and no extra pip packages).
+
 ## Architecture
 
 See [architecture and lineage](docs/architecture.md) for the Mermaid diagram and table contracts. The main flow is:
@@ -95,6 +106,7 @@ notebooks/           Spark + Delta reference for Databricks
 schemas/             Silver and Gold contracts
 airflow/dags/        optional Airflow schedule example
 azure/               Databricks job configuration reference
+scripts/              README screenshot generator
 tests/                unit and pipeline quality tests
 docs/                 architecture, sources, Azure deployment
 config/               local source and quality settings

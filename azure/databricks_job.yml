@@ -8,6 +8,8 @@ resources:
           notebook_task:
             notebook_path: ../notebooks/treasury_medallion.py
             source: WORKSPACE
+            base_parameters:
+              storage_root: "abfss://lake@<storage-account>.dfs.core.windows.net"
           job_cluster_key: medallion_cluster
       job_clusters:
         - job_cluster_key: medallion_cluster
