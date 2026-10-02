@@ -102,13 +102,9 @@ config/               local source and quality settings
 
 ## GitHub: publish this project
 
-Create a **new empty repository** on your GitHub account (do not initialize it with a README or license), then from this directory set the remote and push:
+This folder is already a local Git repository with an initial commit on `main`. Create a **new empty repository** on your GitHub account (do not initialize it with a README or license), then from this directory set the remote and push:
 
 ```bash
-git init
-git add .
-git commit -m "Build local-first Delta medallion platform"
-git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 git push -u origin main
 ```
