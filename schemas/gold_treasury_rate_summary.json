@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gold Treasury Rate Summary",
+  "type": "object",
+  "required": ["instrument", "observations", "avg_rate_pct", "min_rate_pct", "max_rate_pct", "latest_rate_pct", "as_of_date"],
+  "properties": {
+    "instrument": {"type": "string", "minLength": 1},
+    "observations": {"type": "integer", "minimum": 1},
+    "avg_rate_pct": {"type": "number", "minimum": 0},
+    "min_rate_pct": {"type": "number", "minimum": 0},
+    "max_rate_pct": {"type": "number", "minimum": 0},
+    "latest_rate_pct": {"type": "number", "minimum": 0},
+    "as_of_date": {"type": "string", "format": "date"}
+  },
+  "additionalProperties": false
+}

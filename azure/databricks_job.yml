@@ -1,0 +1,17 @@
+# Reference Databricks job shape. Adapt the workspace, runtime, and cluster policy.
+resources:
+  jobs:
+    treasury_medallion:
+      name: treasury-medallion
+      tasks:
+        - task_key: pipeline
+          notebook_task:
+            notebook_path: ../notebooks/treasury_medallion.py
+            source: WORKSPACE
+          job_cluster_key: medallion_cluster
+      job_clusters:
+        - job_cluster_key: medallion_cluster
+          new_cluster:
+            spark_version: "14.3.x-scala2.12"
+            node_type_id: "Standard_DS3_v2"
+            num_workers: 2

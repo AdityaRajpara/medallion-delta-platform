@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Silver Treasury Rates",
+  "type": "object",
+  "required": ["record_date", "instrument", "rate_pct"],
+  "properties": {
+    "record_date": {"type": "string", "format": "date"},
+    "instrument": {"type": "string", "minLength": 1},
+    "rate_pct": {"type": "number", "minimum": 0}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+  "data_root": "data",
+  "source": {
+    "treasury_url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/avg_interest_rates",
+    "treasury_page_size": 1000,
+    "timeout_seconds": 30
+  },
+  "quality": {"max_invalid_rate": 0.05},
+  "logging": {"level": "INFO"}
+}

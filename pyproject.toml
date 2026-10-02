@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medallion-delta-platform"
+version = "0.1.0"
+description = "Local-first medallion data platform with an Azure Databricks and Delta Lake deployment path"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+spark = ["pyspark>=3.5,<4", "delta-spark>=3.2,<4"]
+airflow = ["apache-airflow>=2.9,<4"]
+
+[project.scripts]
+medallion = "medallion.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
